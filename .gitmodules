@@ -1,0 +1,3 @@
+[submodule "lib/foursquare"]
+	path = lib/foursquare
+	url = git://github.com/jmathai/foursquare-async.git
