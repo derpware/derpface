@@ -16,9 +16,8 @@
 							<div class="tile">
 								<img class="tile-image big-illustration" alt="" src="images/logos/<?= $plugin["name"]; ?>.png">
 								<h2 class="tile-title"><?= $plugin["name"]; ?></h3>
-								<!--<a href="http://cosm.com/feeds/<?= $plugin["cosm_feed"]; ?>">Cosm feed</a>-->
 								<div><?= $plugin["content"]; ?></div>
-								<a class="btn btn-primary btn-large btn-block" href="#">View statistics</a>
+								<a class="btn btn-primary btn-large btn-block" href="http://cosm.com/feeds/<?= $plugin["cosm_feed"]; ?>">View statistics</a>
 							</div>
 						</div>
 					</div>
