@@ -1,7 +1,5 @@
-<div>Last location: <?= $this->venue; ?> (<i><?= $this->timestamp; ?>)</i></div>
-
-<div id="map" style="height:180px; width:180px;"></div>
-
+<div id="map" style="height:180px; width:270px;"></div>
+<p>Last location: <?= $this->venue; ?><br>(<i><?= $this->timestamp; ?>)</i></p>
 <script>
 // create a map in the "map" div, set the view to a given place and zoom
 var map = L.map('map').setView([<?= $this->latitude; ?>, <?= $this->longitude; ?>], 13);

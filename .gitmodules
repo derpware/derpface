@@ -1,3 +1,6 @@
 [submodule "lib/foursquare"]
 	path = lib/foursquare
 	url = git://github.com/jmathai/foursquare-async.git
+[submodule "lib/trakt"]
+	path = lib/trakt
+	url = git://github.com/wnielson/php-trakt.git
