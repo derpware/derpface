@@ -2,10 +2,13 @@
 require_once BASE_PATH.'/lib/foursquare/EpiCurl.php';
 require_once BASE_PATH.'/lib/foursquare/EpiFoursquare.php';
 
+// Each plugin extends the abstract class "Plugin"
 class FoursquarePlugin extends Plugin {
 	protected $name = "foursquare";
 	
+	// Called by the constructor
 	function init() {
+		// Add our js requirements to the header
 		addToHeader('<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.css" />
 			<!--[if lte IE 8]>
 				<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.5/leaflet.ie.css" />
@@ -14,6 +17,7 @@ class FoursquarePlugin extends Plugin {
 		);
 	}
 	
+	// Get the data from this plugin
 	function getData() {
 		$foursquareapi = new EpiFoursquare($this->config["clientID"], $this->config["clientSecret"], $this->config["accesstoken"]);
 		
