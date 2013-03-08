@@ -6,3 +6,7 @@ A web frontend to show everyone all your post-privacy infos in one single place.
 2. Copy the config.php file from your DerpTracker installation, or create a new one from config.php.sample
 3. ???
 4. Profit
+
+## License
+Licensed under MIT license. For details, see the LICENSE file
+
