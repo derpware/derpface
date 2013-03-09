@@ -17,7 +17,7 @@
 							<div class="tile" style="min-height: 320px;">
 								<h2 class="tile-title"><?= $plugin["name"]; ?></h3>
 								<div><?= $plugin["content"]; ?></div>
-								<a class="btn btn-primary btn-large btn-block" href="http://cosm.com/feeds/<?= $plugin["cosm_feed"]; ?>">View statistics</a>
+								<a class="btn btn-primary btn-large btn-block" href="#" style="position: absolute; bottom: 10px; width: 275px;">View statistics</a>
 							</div>
 						</div>
 					</div>
