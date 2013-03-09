@@ -8,6 +8,7 @@ require_once BASE_PATH.'/Template.class.php';
 
 // Plugins
 include(BASE_PATH.'/plugins/foursquare.php');
+include(BASE_PATH.'/plugins/trakt.php');
 
 $header = "";
 
