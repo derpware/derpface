@@ -7,8 +7,7 @@ abstract class Plugin {
 	abstract protected function getData();
 	
 	function __construct() {
-		global ${$this->name};
-		$this->config = ${$this->name};
+		$this->config = ConfigProvider::getInstance()->get($this->name);
 		$this->init();
 	}
 	

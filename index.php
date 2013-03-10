@@ -1,8 +1,12 @@
 <?php
 define("BASE_PATH", dirname(__FILE__));
 
+// Configuration
+require_once BASE_PATH.'/ConfigProvider.interface.php';
+require_once BASE_PATH.'/PHPFileConfig.class.php';
+ConfigProvider::create("PHPFileConfig");
+
 // Basic requirements
-require_once BASE_PATH.'/config.php';
 require_once BASE_PATH.'/Plugin.class.php';
 require_once BASE_PATH.'/Template.class.php';
 
