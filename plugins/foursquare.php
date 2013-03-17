@@ -26,7 +26,7 @@ class FoursquarePlugin extends Plugin {
 		
 		return array(
 			"timestamp" => date("F j, Y, g:i a", $user->checkins->items[0]->createdAt),
-			"venue" => $user->checkins->items[0]->venue->name,
+			"venue" => htmlentities($user->checkins->items[0]->venue->name, ENT_QUOTES),
 			"latitude" => $user->checkins->items[0]->venue->location->lat,
 			"longitude" => $user->checkins->items[0]->venue->location->lng,
 			);
