@@ -56,4 +56,9 @@ $app->get('/', function() use ($header, $cosm) {
 	return $template->renderToString();
 });
 
+$app->get('/{plugin_name}/{subpage}', function($plugin_name, $subpage) {
+	$plugin = new $plugin_name(); // TODO!!!
+	return $plugin->getPage($subpage);
+});
+
 $app->run();
