@@ -42,4 +42,10 @@ class TraktPlugin extends Plugin {
 				"watching" => $watching
 			);
 	}
+	
+	function getPage($subpage) {
+		if ($subpage == "demo") {
+			return "<html><body>HerpDerp</body></html>";
+		}
+	}
 }
