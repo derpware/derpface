@@ -2,7 +2,7 @@
 require_once BASE_PATH . '/../lib/trakt/trakt.php';
 
 class TraktPlugin extends Plugin {
-	protected $name = "trakt";
+	protected static $name = "trakt";
 	
 	function init() {
 		

@@ -25,12 +25,15 @@ function addToHeader($html) {
 	$header .= $html;
 }
 
-$app->get('/', function() use ($header, $cosm) {
-	
-	// Get alll plugins into an array
-	$plugins = array_filter(get_declared_classes(), function($className) {
-		return in_array('Plugin', class_parents($className));
-	});
+$plugins = array();
+// Get alll plugins into an array
+foreach (get_declared_classes() as $className) {
+	if (in_array('Plugin', class_parents($className))) {
+		$plugins[$className::getName()] = $className;
+	}
+}
+
+$app->get('/', function() use ($plugins, $header, $cosm) {
 
 	// Run each plugin
 	$plugin_data = array();
@@ -56,8 +59,8 @@ $app->get('/', function() use ($header, $cosm) {
 	return $template->renderToString();
 });
 
-$app->get('/{plugin_name}/{subpage}', function($plugin_name, $subpage) {
-	$plugin = new $plugin_name(); // TODO!!!
+$app->get('/{plugin_name}/{subpage}', function($plugin_name, $subpage) use ($plugins) {
+	$plugin = new $plugins[$plugin_name](); // TODO!!!
 	return $plugin->getPage($subpage);
 });
 

@@ -1,32 +1,33 @@
 <?php
 abstract class Plugin {
+	protected static $name = "unknown";
+	
 	protected $config;
-	protected $name = "unknown";
 	protected $cache_duration = 300;
 	
 	abstract protected function init();
 	abstract protected function getData();
+
+	public static function getName() {
+		return static::$name;
+	}
 	
 	public function __construct() {
-		$this->config = ConfigProvider::getInstance()->get($this->name);
+		$this->config = ConfigProvider::getInstance()->get(static::$name);
 		$this->init();
 	}
 	
-	public function getName() {
-		return $this->name;
-	}
-		
 	public function isActive() {
 		return $this->config["active"];
 	}
 	
 	public function renderToString() {
-		$data = $this->load_cache($this->name, $this->cache_duration);
+		$data = $this->load_cache(self::$name, $this->cache_duration);
 		if ($data === false) {
 			$data = $this->getData();
-			$this->save_cache($this->name, $data);
+			$this->save_cache(static::$name, $data);
 		}
-		$template = new Template("plugins/{$this->name}.view.php", $data);
+		$template = new Template("plugins/".static::$name.".view.php", $data);
 		return $template->renderToString();
 	}
 	

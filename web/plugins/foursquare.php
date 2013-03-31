@@ -4,7 +4,7 @@ require_once BASE_PATH.'/../lib/foursquare/EpiFoursquare.php';
 
 // Each plugin extends the abstract class "Plugin"
 class FoursquarePlugin extends Plugin {
-	protected $name = "foursquare";
+	protected static $name = "foursquare";
 	
 	// Called by the constructor
 	function init() {
